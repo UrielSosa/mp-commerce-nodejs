@@ -33,7 +33,7 @@ module.exports = {
             req.on('data', chunk => {
                 body += chunk.toString();
             });
-            console.log(body);
+            console.log(`---------------${body}----------------`);
             return res.status(200);
         }else {
             return res.status(500);
