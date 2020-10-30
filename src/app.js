@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const exphbs  = require('express-handlebars');
 const path = require('path');
+const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -25,4 +26,4 @@ app.use('/', mainRouter);
 
 
  
-app.listen(3000, () => (console.log('El server corre en el puerto 3000')));
+app.listen(port, () => (console.log('El server corre en el puerto 3000')));
