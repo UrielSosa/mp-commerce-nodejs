@@ -33,12 +33,26 @@
                                                 Smartphones
                                             </h2>
                                         </button>
-
-
                                     </div>
 
                                 </div>
                             </div>
+
+                            {{#if status}}
+
+                                <div style="text-align: center;">
+                                    <div>
+                                        <h2>{{ status }}</h2>
+                                    </div>
+                                </div>
+                            {{/if}}
+                            {{#if success}}
+                                <div>
+                                    <p>Payment method: {{ payment_type }}</p>
+                                    <p>External reference: {{ external_reference }}</p>
+                                    <p>Payment ID: {{ colleccion_id }}</p>
+                                </div>
+                            {{/if}}
                             <div class="as-accessories-results  as-search-desktop">
                                 <div class="column as-search-filters" aria-hidden="false" id="as-search-filters" style="position: relative;">
 

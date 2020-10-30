@@ -11,25 +11,23 @@ module.exports = {
             payment_methods,
             back_urls,
             auto_return: 'approved',
+            notification_url: 'https://urielsosa-mp-commerce-nodejs.herokuapp.com/notifications?source_news=webhooks',
             external_reference: 'sosa.uriel1999@gmail.com'
         }
         
     },
     createItem: function (req) {
-        let { title, price:unit_price, unit:quantity, img } = req.query;
-        
-        unit_price = Number(unit_price);
-        quantity = Number(quantity);
-
+        let { title, price, unit, img } = req.query;
         let picture_url = this.uri(req) + img;
+
         return [
             {
                 id: 1234,
                 title,
                 description: 'Dispositivo móvil de Tienda e-comerce',
                 picture_url,
-                quantity,
-                unit_price,
+                quantity: Number(unit),
+                unit_price: Number(price)
             }
         ];
     },
@@ -41,15 +39,15 @@ module.exports = {
             email: 'test_user_63274575@testuser.com',
             phone: {
                 area_code: '11',
-                number: '22223333'
+                number: 22223333
             },
             identificarion: {
                 type: 'DNI',
-                number: '12345678'
+                number: 12345678
             },
             address: {
                 street_name: 'false',
-                street_number: '123',
+                street_number: 123,
                 zip_code: '1111',
             }
         }

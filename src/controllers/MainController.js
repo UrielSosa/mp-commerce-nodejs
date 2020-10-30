@@ -8,16 +8,17 @@ mercadopago.configure({
 
 module.exports = {
     home: (req,res) => {
-        res.render('home');
+        return res.render('home', req.query);
     },
     detail: async (req,res) => {
         let preference = mp.createPreference(req);
         
         try {
-            let res = mercadopago.preferences.create(preference);
+            let response = await mercadopago.preferences.create(preference);
 
-            let data = res.body;
-            res.render('detail', {...req.query, data});
+            let data = response.body;
+            
+            return res.render('detail', {...req.query, data});
 
         }catch (e) {
             throw new Error(`${e.name} : ${e.message}`);
