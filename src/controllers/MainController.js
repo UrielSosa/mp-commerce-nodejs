@@ -29,10 +29,8 @@ module.exports = {
     pending: (req, res) => res.render('home', { status: 'pending' }),
     notifications: (req,res) => {
         if (req.method === 'POST') {
-            let body = '';
-            req.on('data', chunk => {
-                body += chunk.toString();
-            });
+            let body = req.body;
+            
             console.log(`---------------${body}----------------`);
             return res.status(200);
         }else {
