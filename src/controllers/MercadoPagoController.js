@@ -11,7 +11,7 @@ module.exports = {
             payment_methods,
             back_urls,
             auto_return: 'approved',
-            notification_url: 'https://urielsosa-mp-commerce-nodejs.herokuapp.com/notifications?source_news=webhooks',
+            notification_url: this.uri(req)+'/notifications?source_news=webhooks',
             external_reference: 'sosa.uriel1999@gmail.com'
         }
         

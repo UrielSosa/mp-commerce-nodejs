@@ -28,7 +28,10 @@ module.exports = {
     failure: (req, res) => res.render('home', { status: 'failure' }),
     pending: (req, res) => res.render('home', { status: 'pending' }),
     notifications: (req,res) => {
+        console.log(req.body);
+
         if (req.method === 'POST') {
+            console.log('entre a post');
             let body = req.body;
             
             console.log(`---------------${body}----------------`);
