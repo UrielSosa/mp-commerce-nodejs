@@ -1,3 +1,4 @@
+const { json } = require('express');
 const mercadopago = require('mercadopago');
 const mp = require('./MercadoPagoController');
 
@@ -27,9 +28,12 @@ module.exports = {
     success: (req, res) => res.render('home', { ...req.query, status: 'success', success:true }),
     failure: (req, res) => res.render('home', { status: 'failure' }),
     pending: (req, res) => res.render('home', { status: 'pending' }),
-    notifications: (req,res) => {
+    notifications (req,res) {
        let body = req.body;
-       console.log(`---------------${body}----------------`);
-       return res.status(200);
+       console.log(`-------------------------------`);
+       console.log(body);
+       console.log(`-------------------------------`);
+       
+       return res.status(200).end();
     }
 }
