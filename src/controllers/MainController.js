@@ -29,7 +29,7 @@ module.exports = {
     failure: (req, res) => res.render('home', { status: 'failure' }),
     pending: (req, res) => res.render('home', { status: 'pending' }),
     notifications (req,res) {
-        console.log(req)
+        console.log(JSON.stringify(req.body));
        return res.status(200).end();
     }
 }
