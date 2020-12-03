@@ -29,10 +29,19 @@ module.exports = {
     failure: (req, res) => res.render('home', { status: 'failure' }),
     pending: (req, res) => res.render('home', { status: 'pending' }),
     notifications (req,res) {
-       let body = req.body;
+        let body = "";
+        req.on("data", (chunk) => {
+            body += chunk.toString();
+        });
+       
        console.log(`-------------------------------`);
        console.log(body);
        console.log(`-------------------------------`);
+       
+       req.on("end", () => {
+            let body = JSON.parse(body);
+            console.log(body);
+       });
        
        return res.status(200).end();
     }

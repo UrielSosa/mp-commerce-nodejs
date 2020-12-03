@@ -24,7 +24,7 @@ module.exports = {
             {
                 id: 1234,
                 title,
-                description: 'Dispositivo móvil de Tienda e-comerce',
+                description: "Dispositivo móvil de Tienda e-commerce",
                 picture_url,
                 quantity: Number(unit),
                 unit_price: Number(price)
@@ -46,7 +46,7 @@ module.exports = {
                 number: 12345678
             },
             address: {
-                street_name: 'false',
+                street_name: 'False',
                 street_number: 123,
                 zip_code: '1111',
             }
