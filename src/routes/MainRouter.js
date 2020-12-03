@@ -9,7 +9,7 @@ router.get('/detail', controller.detail);
 router.get('/success', controller.success);
 router.get('/failure', controller.failure);
 router.get('/pending', controller.pending);
-router.get('/notifications', controller.notifications);
+router.post('/notifications', controller.notifications);
 
 
 module.exports = router;
